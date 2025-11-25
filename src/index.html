@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TPV de Escritorio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TPV de Escritorio</h1>
+      <div class="cash-controls">
+        <button id="openCash">Abrir caja</button>
+        <button id="closeCash" class="danger">Cerrar caja</button>
+        <div id="cashStatus" class="badge">Caja cerrada</div>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Carga de catálogo desde CSV</h2>
+        <div class="file-row">
+          <input type="file" id="csvFile" accept=".csv,text/csv" />
+          <button id="previewCsv">Previsualizar y mapear</button>
+        </div>
+        <div id="mapping" class="mapping"></div>
+        <div id="preview" class="preview"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Venta rápida</h2>
+        <div class="sale-form">
+          <input type="text" id="lookup" placeholder="Referencia o código de barras" />
+          <input type="number" id="quantity" min="1" step="1" value="1" />
+          <button id="addItem">Añadir a la venta</button>
+          <button id="finishSale" class="primary">Finalizar venta</button>
+        </div>
+        <div id="currentSale" class="sale-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Catálogo cargado</h2>
+        <div id="catalog" class="catalog"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Resumen de ventas</h2>
+        <div id="ledger"></div>
+      </section>
+    </main>
+
+    <footer id="status"></footer>
+    <script src="renderer.js"></script>
+  </body>
+</html>
